@@ -1,0 +1,14 @@
+<h1>Predict category AI</h1>
+<p>Enter title</p>
+
+<!-- urls.pyへのアクション(urls.pyではviewへ遷移) -->
+<form action="{% url 'home' %}" method="POST">
+    <!-- views.pyへPOST/titleの値を送る -->
+    <input type="text" name = "title">
+    {% csrf_token %}
+    <button type="submit">Send</button>
+</form>
+<!-- views.pyから予測結果(title)を受け取る -->
+{% if title %}
+    <h1>Prediction:{{ title }}</h1>
+{% endif %}
