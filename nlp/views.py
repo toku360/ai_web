@@ -35,4 +35,5 @@ def index(request):
             "nlp/home.html",
             {"title": pred}
         )
+        
 
